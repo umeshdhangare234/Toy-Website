@@ -25,7 +25,7 @@ export class ToyDescriptionComponent implements OnInit {
   //  this.animals = this.http.get(this._url).subscribe(());
   }
   
-  // addToy(toy:Toy){
-  //   this.animals.push()
-  // }
+  addToy(){
+    this.animals.push();
+  }
 }

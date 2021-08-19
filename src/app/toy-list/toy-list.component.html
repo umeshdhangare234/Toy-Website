@@ -1,45 +1,60 @@
 <div class="container">
+    <div><h1 style="text-align: center;">Shop By Category</h1></div>
     <div class="row">
-        <div *ngFor="let toyType of ToysTypes" class="col-sm-6">
+        <div *ngFor="let toyType of ToysTypes" class="col-6 col-sm-6 col-md-4">
             <div [ngSwitch]="toyType">
                 <div *ngSwitchCase="'Animals'">
-                    <a routerLink='/toy-description' routerLinkActive="active">
+                    <img src="..\assets\data\images\animals\logo.jpg" alt="Animals" width="100" height="100" routerLink='/toy-description' routerLinkActive="active"
+                     class="btn"><br>
+                    <a routerLink='/toy-description' routerLinkActive="active" class="btn">
                         {{toyType}}
                     </a>
                 </div>
 
                 <div *ngSwitchCase="'Dolls'">
-                    <a routerLink='/toy-description' routerLinkActive="active">
+                    <img src="..\assets\data\images\animals\logo.jpg" alt="Animals" width="100" height="100" routerLink='/toy-description' routerLinkActive="active"
+                     class="btn"><br>
+                    <a routerLink='/toy-description' routerLinkActive="active"  class="btn">
                         {{toyType}}
                     </a>
                 </div>
 
                 <div *ngSwitchCase="'Cars'">
-                    <a routerLink='/toy-description' routerLinkActive="active">
+                    <img src="..\assets\data\images\animals\logo.jpg" alt="Animals" width="100" height="100" routerLink='/toy-description' routerLinkActive="active"
+                     class="btn"><br>
+                    <a routerLink='/toy-description' routerLinkActive="active" class="btn">
                         {{toyType}}
                     </a>
                 </div>
 
                 <div *ngSwitchCase="'Electronic Toys'">
-                    <a routerLink='/toy-description' routerLinkActive="active">
+                    <img src="..\assets\data\images\animals\logo.jpg" alt="Animals" width="100" height="100" routerLink='/toy-description' routerLinkActive="active"
+                     class="btn"><br>
+                    <a routerLink='/toy-description' routerLinkActive="active" class="btn">
                         {{toyType}}
                     </a>
                 </div>
 
                 <div *ngSwitchCase="'Educational Toys'">
-                    <a routerLink='/toy-description' routerLinkActive="active">
+                    <img src="..\assets\data\images\animals\logo.jpg" alt="Animals" width="100" height="100" routerLink='/toy-description' routerLinkActive="active"
+                     class="btn"><br>
+                    <a routerLink='/toy-description' routerLinkActive="active" class="btn">
                         {{toyType}}
                     </a>
                 </div>
 
                 <div *ngSwitchCase="'Creative'">
-                    <a routerLink='/toy-description' routerLinkActive="active">
+                    <img src="..\assets\data\images\animals\logo.jpg" alt="Animals" width="100" height="100" routerLink='/toy-description' routerLinkActive="active"
+                     class="btn"><br>
+                    <a routerLink='/toy-description' routerLinkActive="active" class="btn">
                         {{toyType}}
                     </a>
                 </div>
 
                 <div *ngSwitchCase="'Construction'">
-                    <a routerLink='/toy-description' routerLinkActive="active">
+                    <img src="..\assets\data\images\animals\logo.jpg" alt="Animals" width="100" height="100" routerLink='/toy-description' routerLinkActive="active"
+                     class="btn"><br>
+                    <a routerLink='/toy-description' routerLinkActive="active" class="btn">
                         {{toyType}}
                     </a>
                 </div>
