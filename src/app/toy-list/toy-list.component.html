@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let toyType of ToysTypes" class="col-sm-6">
+            <div [ngSwitch]="toyType">
+                <div *ngSwitchCase="'Animals'">
+                    <a routerLink='/toy-description' routerLinkActive="active">
+                        {{toyType}}
+                    </a>
+                </div>
+
+                <div *ngSwitchCase="'Dolls'">
+                    <a routerLink='/toy-description' routerLinkActive="active">
+                        {{toyType}}
+                    </a>
+                </div>
+
+                <div *ngSwitchCase="'Cars'">
+                    <a routerLink='/toy-description' routerLinkActive="active">
+                        {{toyType}}
+                    </a>
+                </div>
+
+                <div *ngSwitchCase="'Electronic Toys'">
+                    <a routerLink='/toy-description' routerLinkActive="active">
+                        {{toyType}}
+                    </a>
+                </div>
+
+                <div *ngSwitchCase="'Educational Toys'">
+                    <a routerLink='/toy-description' routerLinkActive="active">
+                        {{toyType}}
+                    </a>
+                </div>
+
+                <div *ngSwitchCase="'Creative'">
+                    <a routerLink='/toy-description' routerLinkActive="active">
+                        {{toyType}}
+                    </a>
+                </div>
+
+                <div *ngSwitchCase="'Construction'">
+                    <a routerLink='/toy-description' routerLinkActive="active">
+                        {{toyType}}
+                    </a>
+                </div>
+
+                
+                
+            </div>
+            
+            
+        </div>
+    </div>
+    
+</div>
