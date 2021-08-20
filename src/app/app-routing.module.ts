@@ -10,7 +10,7 @@ import { ElectronicComponent } from './electronic/electronic.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'toy-list', pathMatch:'full'},
-  {path:'toy-description', component:ToyDescriptionComponent},
+  {path:'animals', component:ToyDescriptionComponent},
   {path:'toy-list',component:ToyListComponent},
   {path:'dolls',component:DollsComponent},
   {path:'cars',component:CarsComponent},
