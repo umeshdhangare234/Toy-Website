@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToyListComponent } from './toy-list/toy-list.component';
 import { ToyDescriptionComponent } from './toy-description/toy-description.component';
+import { DollsComponent } from './dolls/dolls.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToyListComponent,
-    ToyDescriptionComponent
+    ToyDescriptionComponent,
+    DollsComponent
   ],
   imports: [
     BrowserModule,

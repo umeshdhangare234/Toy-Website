@@ -1,0 +1,13 @@
+a {
+    text-align: center;
+}
+
+.items{
+    margin-top: 20px;
+    background-color: skyblue;
+    align-items:stretch;
+}
+
+.item{
+    align-items: center;
+}
