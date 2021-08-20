@@ -9,13 +9,21 @@ import { AppComponent } from './app.component';
 import { ToyListComponent } from './toy-list/toy-list.component';
 import { ToyDescriptionComponent } from './toy-description/toy-description.component';
 import { DollsComponent } from './dolls/dolls.component';
+import { CarsComponent } from './cars/cars.component';
+import { EducationalComponent } from './educational/educational.component';
+import { CreativeComponent } from './creative/creative.component';
+import { ElectronicComponent } from './electronic/electronic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToyListComponent,
     ToyDescriptionComponent,
-    DollsComponent
+    DollsComponent,
+    CarsComponent,
+    EducationalComponent,
+    CreativeComponent,
+    ElectronicComponent
   ],
   imports: [
     BrowserModule,

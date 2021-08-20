@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 style="text-align: center;">Animals</h1>
+    <h1 style="text-align: center;">Action Figures</h1>
     <table class="table table-bordered">
         <thead class="thead-light">
             <tr>
@@ -12,11 +12,11 @@
         </thead>    
         
         <tbody>
-            <tr *ngFor="let animal of animals">
-                <td> {{animal.id}}</td>
-                <td> {{animal.name}}</td>
-                <td> {{animal.description}}</td>
-                <td> {{animal.date | date:'dd-MM-yyyy'}}</td>
+            <tr *ngFor="let creative of creatives">
+                <td> {{creative.id}}</td>
+                <td> {{creative.name}}</td>
+                <td> {{creative.description}}</td>
+                <td> {{creative.date | date:'dd-MM-yyyy'}}</td>
                 <td><button type="button" class="btn btn-primary">Buy it </button></td>
                 
             </tr>
@@ -77,3 +77,4 @@
   </div>
 </div>
 </div>
+

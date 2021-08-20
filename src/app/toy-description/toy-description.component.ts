@@ -60,7 +60,7 @@ animals= [
   //   this.animals.push('date');
   // }
 
-  addToy(id:number,name:string,description:string,date:any){
+  addToy(id:number = this.animals.length+1 ,name:string,description:string,date:Date = new Date()){
      this.list = this.animals.push({id,name,description,date});
   }
 }

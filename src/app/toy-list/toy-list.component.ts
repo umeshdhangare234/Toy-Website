@@ -7,7 +7,7 @@ import { Toy } from '../toy.model';
   styleUrls: ['./toy-list.component.css']
 })
 export class ToyListComponent implements OnInit {
-  ToysTypes:string[] = ['Animals', 'Dolls','Cars','Electronic Toys','Educational Toys','Creative','Construction'];
+  ToysTypes:string[] = ['Animals', 'Dolls','Cars','Electronic Toys','Educational Toys','Action Figures'];
   constructor() { }
 
   ngOnInit(): void {
