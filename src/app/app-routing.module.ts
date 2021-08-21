@@ -7,10 +7,11 @@ import { CarsComponent } from './cars/cars.component';
 import { EducationalComponent } from './educational/educational.component';
 import { CreativeComponent } from './creative/creative.component';
 import { ElectronicComponent } from './electronic/electronic.component';
+import { AnimalsComponent } from './animals/animals.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'toy-list', pathMatch:'full'},
-  {path:'animals', component:ToyDescriptionComponent},
+  {path:'animals', component:AnimalsComponent},
   {path:'toy-list',component:ToyListComponent},
   {path:'dolls',component:DollsComponent},
   {path:'cars',component:CarsComponent},

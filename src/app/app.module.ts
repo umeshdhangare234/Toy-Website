@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import {HttpClientModule} from '@angular/common/http';
-// import {HttpClient} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+// import { DataTablesModule } from "angular-datatables";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +13,8 @@ import { CarsComponent } from './cars/cars.component';
 import { EducationalComponent } from './educational/educational.component';
 import { CreativeComponent } from './creative/creative.component';
 import { ElectronicComponent } from './electronic/electronic.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AnimalsComponent } from './animals/animals.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +24,17 @@ import { ElectronicComponent } from './electronic/electronic.component';
     CarsComponent,
     EducationalComponent,
     CreativeComponent,
-    ElectronicComponent
+    ElectronicComponent,
+    AnimalsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // HttpClient,
-    // HttpClientModule
-    FormsModule
+  
+    HttpClientModule,
+    FormsModule,
+    NgbModule
+    // DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

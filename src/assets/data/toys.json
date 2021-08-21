@@ -1,8 +1,3 @@
-[
-    {"id":1, "name":"Tiger","description":"Tiger is one of the very dangerous animal of the jungle.","date":12},
-    {"id":1, "name":"Lion","description":"Lion is the king of the jungle.","date":13},
-    {"id":1, "name":"Deer","description":"Deer is one of the fastest animal of the jungle.","date":14},
-    {"id":1, "name":"Fox","description":"Fox is the cleverest animal of the jungle.","date":15},
-    {"id":1, "name":"Elephant","description":"Elephant has a very huge size.","date":16},
-    {"id":1, "name":"Rabbit","description":"Rabbit can jump very long.","date":17}
-]
+
+    {"id":1, "name":"Tiger","description":"Tiger is one of the very dangerous animal of the jungle.","date":12}
+  
