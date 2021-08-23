@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-// import { DataTablesModule } from "angular-datatables";
+import { DataTablesModule } from "angular-datatables";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToyListComponent } from './toy-list/toy-list.component';
-import { ToyDescriptionComponent } from './toy-description/toy-description.component';
+// import { ToyDescriptionComponent } from './toy-description/toy-description.component';
 import { DollsComponent } from './dolls/dolls.component';
 import { CarsComponent } from './cars/cars.component';
 import { EducationalComponent } from './educational/educational.component';
@@ -19,7 +19,7 @@ import { AnimalsComponent } from './animals/animals.component';
   declarations: [
     AppComponent,
     ToyListComponent,
-    ToyDescriptionComponent,
+    // ToyDescriptionComponent,
     DollsComponent,
     CarsComponent,
     EducationalComponent,
@@ -30,7 +30,7 @@ import { AnimalsComponent } from './animals/animals.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-  
+    DataTablesModule,
     HttpClientModule,
     FormsModule,
     NgbModule

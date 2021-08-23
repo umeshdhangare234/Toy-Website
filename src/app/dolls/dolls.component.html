@@ -18,7 +18,7 @@
                 <td> {{doll.name}}</td>
                 <td> {{doll.description}}</td>
                 <td> {{doll.date | date:'dd-MM-yyyy'}}</td>
-                <td><button type="button" class="btn btn-primary">Buy it </button></td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
                 
             </tr>
         </tbody>
@@ -47,10 +47,7 @@
       </div>
       <div class="modal-body">
         <form>
-          <!-- <div class="form-group">
-            <label for="id" class="col-form-label">ID:</label>
-            <input type="number" class="form-control" id="id" name="ngModel" [(ngModel)]="id" placeholder="Id">
-          </div> -->
+          
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
             <input type="text" class="form-control" id="name" name="ngModel" [(ngModel)]="name" placeholder="Name">
@@ -59,13 +56,7 @@
             <label for="description" class="col-form-label">Description:</label>
             <input type="text" class="form-control" id="description" name="ngModel" [(ngModel)]="description" placeholder="Description">
           </div>
-          <!-- <div class="form-group">
-            <label for="date" class="col-form-label">Date:</label>
-            <input type="date" class="form-control" id="date" name="ngModel" [(ngModel)]="date" placeholder="Date">
-          </div> -->
-
-          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addToy(name,description)" >Save Changes</button> -->
+         
         </form>
 
         

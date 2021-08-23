@@ -10,17 +10,23 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 export class AnimalsComponent implements OnInit {
 
  
-
+  dtOptions: DataTables.Settings = {};
  
   modalRef: NgbModalRef;
  
   todaydate = new Date();
   list: any[] = [];
   data: any = {};
+
   constructor(private modalService: NgbModal,
     private router: Router,) { }
   ngOnInit(): void {
- 
+
+    this.dtOptions = {
+      "searching": false,
+      pagingType: 'full_numbers'
+    };
+
   }
  
   openPopup(template: TemplateRef<any>) {
