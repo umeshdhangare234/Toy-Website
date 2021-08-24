@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-dolls',
@@ -6,14 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dolls.component.css']
 })
 export class DollsComponent implements OnInit {
-    id!:number ;
-  name!:string ;
-  description!:string;
-  // newDate = new Date();
-  date!:Date ;
-  // newId:any;
+  dtOptions : DataTables.Settings = {};
   list:any = [];
-  constructor() { }
+  modalRef: NgbModalRef;
+  data:any = {};
+  todaydate = new Date();
+
+  constructor(private modalService: NgbModal) { }
   dolls = [
     {"id":1, "name":"Thumbelina","description":"Tiger is one of the very dangerous animal of the jungle.","date":new Date('12-12-2012')},
     {"id":2, "name":"Princess Lia","description":"Lion is the king of the jungle.","date":new Date()},
@@ -23,16 +24,37 @@ export class DollsComponent implements OnInit {
     {"id":6, "name":"Véronique","description":"Rabbit can jump very long.","date":new Date()}
   ]
   ngOnInit(): void {
-    // this.newId = this.dolls.length + 1;
-    this.dolls = this.dolls.concat(this.list) ;
-    // this.dolls.length = this.newId ;
+   this.list = this.dolls;
+   
+   this.dtOptions = {
+    "searching":true
+   }
   }
 
-  addToy(id:number = this.dolls.length + 1,name:string,description:string,date:Date = new Date()){
-    // this.id = this.dolls.length + 1;
-    // this.newDate = new Date();
-    this.list = this.dolls.push({id,name,description, date});
- }
+  openPopup(template: TemplateRef<any>) {
+    this.data = {};
+    this.list.push(this.data);
+ 
+    this.modalRef = this.modalService.open(template);
+  }
 
+  add() {
+    
+    this.closePopup();
+  }
+ 
+  closePopup() {
+    this.modalRef.close();
+  }
+ 
+  edit(item,template) {
+    this.data=item;
+    this.modalRef = this.modalService.open(template);
+    
+  }
+  save() {
+ 
+    this.closePopup();
+  }
  
 }

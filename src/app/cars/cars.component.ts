@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,TemplateRef } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cars',
@@ -6,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-  id!:number ;
-  name!:string ;
-  description!:string;
-  date!:Date ;
+  todaydate = new Date();
+  dtOptions: DataTables.Settings = {};
   list:any = [];
-  constructor() { }
+  data:any = {};
+  modalRef: NgbModalRef;
+  constructor(private modalService: NgbModal) { }
   cars = [
     {"id":1, "name":"Lightning McQueen","description":"Tiger is one of the very dangerous animal of the jungle.","date":new Date('12-12-2012')},
     {"id":2, "name":"Cruz Ramirez","description":"Lion is the king of the jungle.","date":new Date()},
@@ -19,13 +20,45 @@ export class CarsComponent implements OnInit {
     {"id":4, "name":"Sterling","description":"Fox is the cleverest animal of the jungle.","date":new Date()},
     {"id":5, "name":"Natalie Certain","description":"Elephant has a very huge size.","date":new Date()},
     {"id":6, "name":"Cal Weathers","description":"Rabbit can jump very long.","date":new Date()}
-  ]
-  ngOnInit(): void {
-    this.cars = this.cars.concat(this.list) ;
+  ];
+  ngOnInit() {
+   
+
+    this.dtOptions = {
+     "searching":false
+    }
+
+    this.default();
   }
 
-  addToy(id:number = this.cars.length + 1 ,name:string,description:string,date:Date = new Date()){
-    this.list = this.cars.push({id,name,description,date});
- }
+  default(){
+    this.list = this.cars;
+  }
+
+  openPopup(template: TemplateRef<any>) {
+    this.data = {};
+    this.list.push(this.data);
+ 
+    this.modalRef = this.modalService.open(template);
+  }
+ 
+  add() {
+    
+    this.closePopup();
+  }
+ 
+  closePopup() {
+    this.modalRef.close();
+  }
+ 
+  edit(item,template) {
+    this.data=item;
+    this.modalRef = this.modalService.open(template);
+    
+  }
+  save() {
+ 
+    this.closePopup();
+  }
 
 }

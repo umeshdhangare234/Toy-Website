@@ -1,55 +1,17 @@
-
-<div class="bg-image" style="background-image: url('../../assets/hulk.jpg');
-height: 100vh">
- 
-    <!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #131b17;">
-        <div class="container">
-            <h3 class="navbar-brand" style="color: blanchedalmond;">Hulk Galaxy</h3>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse mr-3" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" style="color: darkgrey;">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: darkgrey;" (click)="openPopup(template)">Add </a>
-                    </li>
-                </ul>
-                <form class="d-flex ">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav> -->
-
-
-    <div class="container">
+<div class="container">
+        <h1 style="text-align: center;">Animals</h1>
  
         <div class="row ">
             <div class="col-sm-5"></div>
-            <!-- <h2 class="label text-center col-sm-12 text-warning">Toy Shop</h2> -->
-            <!-- <div class="row">
-            <div class="col-sm-11 text-left">
- 
-            </div>
-            <div class="col-sm-1 text-right">
-                <button type="button" class="btn btn-success btn-sm" (click)="openPopup(template)">Add Toy</button>
-            </div>
-            class="table table-bordered  table-striped" style="text-align: center;"
-        </div> -->
+          
             <div class="col-sm-12 mt-5">
-                <table  datatable [dtOptions]="dtOptions"  class="row-border table-bordered hover">
+                <table  datatable [dtOptions]="dtOptions" class="row-border table-bordered hover">
                     <thead>
                         <tr>
-                            <th style="width: 5%">Id</th>
-                            <th style="width: 15%">Name</th>
-                            <th style="width: 40%">Description</th>
-                            <th style="width: 10%">Date</th>
+                            <th style="width: 5%;" >Id</th>
+                            <th style="width: 15%;">Name</th>
+                            <th style="width: 70%;">Description</th>
+                            <th style="width: 10%;">Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,8 +29,8 @@ height: 100vh">
                 <button class="btn btn-primary" (click)="openPopup(template)">Add </button>
             </div>            
         </div>
-    </div>
 </div>
+
 
 
 
@@ -83,21 +45,21 @@ height: 100vh">
         <div class="modal-body">
  
             <div class="form-group ">
-                <label>Name:-</label>
+                <label>Name:</label>
                 <input type="text" class="form-control " name="name" pattern="^[A-Z a-z]+[a-z 0-9]*$" required
                     [(ngModel)]="data.name" #name="ngModel">
                 <span class="text-danger" *ngIf="name.errors?.required && (name.dirty || name.touched)">
-                    'Name' field is required!
+                    Name is required!
                 </span>
                 <span class="text-danger" *ngIf="name.errors?.pattern">Name is required</span>
             </div>
             <div>
-                <label>Description:-</label>
+                <label>Description:</label>
                 <textarea type="text" class="form-control" pattern=".*\w*[a-zA-Z]\w*.*" minlength="10" maxlength="120"
                     name="description" required [(ngModel)]="data.description" #description="ngModel"></textarea>
                 <span class="text-danger"
                     *ngIf="description.errors?.required && (description.dirty || description.touched)">
-                    'Description' field is required!
+                    Description is required!
                 </span>
                 <span class="text-danger" *ngIf="description.errors?.pattern">Description is required!</span>
                 <span class="text-danger" *ngIf="description.errors?.minlength">Description must be at least 10

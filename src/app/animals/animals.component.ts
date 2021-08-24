@@ -18,13 +18,22 @@ export class AnimalsComponent implements OnInit {
   list: any[] = [];
   data: any = {};
 
+  animals = [
+    {"id":1, "name":"Tiger","description":"Tiger is one of the very dangerous animal of the jungle.","date":new Date('12-12-2012')},
+    {"id":2, "name":"Lion","description":"Lion is the king of the jungle.","date":new Date()},
+    {"id":3, "name":"Deer","description":"Deer is one of the fastest animal of the jungle.","date":new Date()},
+    {"id":4, "name":"Fox","description":"Fox is the cleverest animal of the jungle.","date":new Date()},
+    {"id":5, "name":"Elephant","description":"Elephant has a very huge size.","date":new Date()},
+    {"id":6, "name":"Rabbit","description":"Rabbit can jump very long.","date":new Date()}
+  ];
   constructor(private modalService: NgbModal,
     private router: Router,) { }
   ngOnInit(): void {
 
+    this.list = this.animals;
+
     this.dtOptions = {
-      "searching": false,
-      pagingType: 'full_numbers'
+      "paging":true
     };
 
   }
