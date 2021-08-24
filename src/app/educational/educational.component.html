@@ -1,79 +1,111 @@
 <div class="container">
-    <h1 style="text-align: center;">Educational</h1>
-    <table class="table table-bordered">
-        <thead class="thead-light">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Created Date</th>
-                <th></th>
-            </tr>
-        </thead>    
-        
-        <tbody>
-            <tr *ngFor="let educational of educationals">
-                <td> {{educational.id}}</td>
-                <td> {{educational.name}}</td>
-                <td> {{educational.description}}</td>
-                <td> {{educational.date | date:'dd-MM-yyyy'}}</td>
-                <td><button type="button" class="btn btn-primary">Buy it </button></td>
-                
-            </tr>
-        </tbody>
+  <h1 style="text-align: center;">Educational Toys</h1>
 
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addToy">Add Toy</button> -->
-
-        
-    </table>
+  <div class="row ">
+      <div class="col-sm-5"></div>
     
-    
-    
-</div>
-
-<div class="container">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add Toy</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add New Toy</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <!-- <div class="form-group">
-            <label for="id" class="col-form-label">ID:</label>
-            <input type="number" class="form-control" id="id" name="ngModel" [(ngModel)]="id" placeholder="Id">
-          </div> -->
-          <div class="form-group">
-            <label for="name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="name" name="ngModel" [(ngModel)]="name" placeholder="Name">
-          </div>
-          <div class="form-group">
-            <label for="description" class="col-form-label">Description:</label>
-            <input type="text" class="form-control" id="description" name="ngModel" [(ngModel)]="description" placeholder="Description">
-          </div>
-          <!-- <div class="form-group">
-            <label for="date" class="col-form-label">Date:</label>
-            <input type="date" class="form-control" id="date" name="ngModel" [(ngModel)]="date" placeholder="Date">
-          </div> -->
-
-          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addToy(id,name,description,date)" >Save Changes</button> -->
-        </form>
-
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addToy(id,name,description,date)" >Save Changes</button>
-      </div>
-    </div>
+      <div class="col-sm-12 mt-5">
+          <table  datatable  class="row-border table-bordered hover">
+              <thead>
+                  <tr>
+                      <th style="width: 5%;" >Id</th>
+                      <th style="width: 15%;">Name</th>
+                      <th style="width: 70%;">Description</th>
+                      <th style="width: 10%;">Date</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of list; let i = index ">
+                      <td>{{i + 1}}</td>
+                      <td>{{item.name}}</td>
+                      <td>{{item.description}}</td>
+                      <td>{{todaydate | date:'dd-MM-yyyy'}}</td>
+                      <td >
+                          <button class="btn btn-secondary" (click)="edit(item,template)"> Edit</button>
+                         </td>
+                  </tr> 
+              </tbody>   
+          </table>
+          <button class="btn btn-primary" (click)="openPopup(template)">Add </button>
+      </div>            
   </div>
 </div>
+
+
+
+
+<ng-template #template let-modal>
+<div class="modal-header">
+  <h6 class="modal-title" id="modal-basic-title">Add Toy</h6>
+  <button type="button" class="close" aria-label="Close" (click)="closePopup()">
+      <span aria-hidden="true">×</span>
+  </button>
 </div>
+<form #addForm="ngForm">
+  <div class="modal-body">
+
+      <div class="form-group ">
+          <label>Name:</label>
+          <input type="text" class="form-control " name="name" pattern="^[A-Z a-z]+[a-z 0-9]*$" required
+              [(ngModel)]="data.name" #name="ngModel">
+          <span class="text-danger" *ngIf="name.errors?.required && (name.dirty || name.touched)">
+              Name is required!
+          </span>
+          <span class="text-danger" *ngIf="name.errors?.pattern">Name is required</span>
+      </div>
+      <div>
+          <label>Description:</label>
+          <textarea type="text" class="form-control" pattern=".*\w*[a-zA-Z]\w*.*" minlength="10" maxlength="120"
+              name="description" required [(ngModel)]="data.description" #description="ngModel"></textarea>
+          <span class="text-danger"
+              *ngIf="description.errors?.required && (description.dirty || description.touched)">
+              Description is required!
+          </span>
+          <span class="text-danger" *ngIf="description.errors?.pattern">Description is required!</span>
+          <span class="text-danger" *ngIf="description.errors?.minlength">Description must be at least 10
+              characters long.</span>
+      </div>
+  </div>
+</form>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary"  (click)="closePopup()">Close</button>
+  <button type="button" class="btn btn-success" [disabled]="!addForm.valid" (click)="add()">Add</button>
+</div>
+</ng-template>
+
+<ng-template #template1 let-modal>
+<div class="modal-header">
+  <h6 class="modal-title" id="modal-basic-title">Edit Toy Details</h6>
+
+</div>
+<form #addForm="ngForm">
+  <div class="modal-body">
+
+      <div class="form-group ">
+          <label>Name:-</label>
+          <input type="text" class="form-control " name="name" pattern="^[A-Z a-z]+[a-z 0-9]*$" required
+              [(ngModel)]="data.name" #name="ngModel">
+          <span class="text-danger" *ngIf="name.errors?.required && (name.dirty || name.touched)">
+              Name is required
+          </span>
+          <span class="text-danger" *ngIf="name.errors?.pattern">Name is required</span>
+      </div>
+      <div>
+          <label>Description:-</label>
+          <textarea type="text" class="form-control" pattern=".*\w*[a-zA-Z]\w*.*" minlength="10" maxlength="120"
+              name="description" required [(ngModel)]="data.description" #description="ngModel"></textarea>
+          <span class="text-danger"
+              *ngIf="description.errors?.required && (description.dirty || description.touched)">
+              Description is required!
+          </span>
+          <span class="text-danger" *ngIf="description.errors?.pattern">'Description' field is invalid!</span>
+          <span class="text-danger" *ngIf="description.errors?.minlength">Description must be at least 10
+              characters long.</span>
+      </div>
+  </div>
+</form>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success"  (click)="save()">Add</button>
+</div>
+</ng-template>
+

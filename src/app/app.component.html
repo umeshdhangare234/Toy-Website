@@ -1,10 +1,9 @@
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark container">
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Katy Toy Shop</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-    
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -15,151 +14,46 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categories</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          
-            <a class="dropdown-item" routerLink='/animals' routerLinkActive="active" href="#">Animals</a>
-          
-          
-            <a class="dropdown-item" routerLink='/dolls' routerLinkActive="active" href="#">Dolls</a>
-          
-            
-            
-          
-          <a class="dropdown-item" routerLink='/cars' routerLinkActive="active" href="#">Cars</a>
-          
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+          <a class="dropdown-item" routerLink='/animals' routerLinkActive="active" href="#">Animals</a>
+          <a class="dropdown-item" routerLink='/dolls' routerLinkActive="active" href="#">Dolls</a>
+          <a class="dropdown-item" routerLink='/cars' routerLinkActive="active" href="#">Cars</a>          
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink='/educational' routerLinkActive="active" href="#">Educational Toys</a>
           <a class="dropdown-item" routerLink='/electronic' routerLinkActive="active" href="#">Electronic Toys</a>
           <a class="dropdown-item" routerLink='/action-figures' routerLinkActive="active" href="#">Action Figures</a>
-          
-          
         </div>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="#">Brand</a>
-      </li>
-      
-      
+      </li> 
     </ul>
     
   </div>
 </nav>
 
-  <!-- <app-toy-list></app-toy-list> -->
-  
-  <!-- <app-toy-description></app-toy-description> -->
-  <!-- <br>
-  <br> -->
-  <router-outlet></router-outlet>
+  <router-outlet class="container-fluid"></router-outlet>
 
-
-<!-- <div id="footer" class="container">
-  <div id="contact">
-    Contact
-  </div>
-</div> -->
-
-
-<!-- <table datatable class="row-border hover">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>First name</th>
-      <th>Last name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Foo</td>
-      <td>Bar</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Someone</td>
-      <td>Youknow</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Iamout</td>
-      <td>Ofinspiration</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Yoda</td>
-      <td>Skywalker</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Patrick</td>
-      <td>Dupont</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Barack</td>
-      <td>Obama</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>François</td>
-      <td>Holland</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Michel</td>
-      <td>Popo</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>Chuck</td>
-      <td>Norris</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>Simon</td>
-      <td>Robin</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>Louis</td>
-      <td>Lin</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>Zelda</td>
-      <td>Link</td>
-    </tr>
-  </tbody>
-</table> -->
-
-
-<footer class="container">
-  <div class="container-fluid">
-      <div class="row container-fluid">
+<footer class="container-fluid">
+  <div>
+      <div class="row">
         <div class="col-4">
           <a href="https://www.facebook.com/" target="_blank">
-            <img src=".\assets\data\facebook.svg" width="25%" height="100" >
+            <img src=".\assets\data\facebook.svg" width="25%" height="50" >
           </a>
           <a href="https://www.youtube.com/" target="_blank">
-            <img src=".\assets\data\youtube.svg" width="25%" height="100" >
+            <img src=".\assets\data\youtube.svg" width="25%" height="50" >
           </a>
           <a href="https://www.instagram.com/" target="_blank">
-            <img src=".\assets\data\instagram.svg" width="25%" height="100" >
+            <img src=".\assets\data\instagram.svg" width="25%" height="50" >
           </a>
           <a href="https://www.twitter.com/" target="_blank">
-            <img src=".\assets\data\twitter.svg" width="25%" height="100" >
+            <img src=".\assets\data\twitter.svg" width="25%" height="50" >
           </a>
         </div>
-        <!-- <div class="col-4"></div>
-        <div class="col-4 container">
-          
-          <input type="text" id="search" size="30px" height="100px">
-          <label for="search" width="20%" class="btn-primary" >Search</label>
-          
-        </div> -->
+       
       </div>
-      
-    
   </div>
 </footer>
+</div>

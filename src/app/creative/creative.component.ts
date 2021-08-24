@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-creative',
@@ -7,12 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreativeComponent implements OnInit {
 
-  id!:number ;
-  name!:string ;
-  description!:string;
-  date!:Date ;
-  list:any = [];
-  constructor() { }
+  modalRef: NgbModalRef;
+ 
+  todaydate = new Date();
+  list: any[] = [];
+  data: any = {};
   creatives = [
     {"id":1, "name":"Optimus Prime","description":"Tiger is one of the very dangerous animal of the jungle.","date":new Date('12-12-2012')},
     {"id":2, "name":"Transformers","description":"Lion is the king of the jungle.","date":new Date()},
@@ -21,11 +21,37 @@ export class CreativeComponent implements OnInit {
     {"id":5, "name":"Spider Man","description":"Elephant has a very huge size.","date":new Date()},
     {"id":6, "name":"Iron Man","description":"Rabbit can jump very long.","date":new Date()}
   ]
+
+ 
+  constructor(private modalService:NgbModal) { }
+  
   ngOnInit(): void {
-    this.creatives = this.creatives.concat(this.list) ;
+    this.list = this.creatives;
   }
 
-  addToy(id:number = this.creatives.length +1,name:string,description:string,date:Date = new Date()){
-    this.list = this.creatives.push({id,name,description,date});
- }
+  openPopup(template: TemplateRef<any>) {
+    this.data = {};
+    this.list.push(this.data);
+ 
+    this.modalRef = this.modalService.open(template);
+  }
+ 
+  add() {
+    
+    this.closePopup();
+  }
+ 
+  closePopup() {
+    this.modalRef.close();
+  }
+ 
+  edit(item,template) {
+    this.data=item;
+    this.modalRef = this.modalService.open(template);
+    
+  }
+  save() {
+ 
+    this.closePopup();
+  }
 }
