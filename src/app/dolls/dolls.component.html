@@ -1,10 +1,6 @@
 <div class="container">
   <h1 style="text-align: center;">Dolls</h1>
-
-  <div class="row ">
-      <div class="col-sm-5"></div>
-    
-      <div class="col-sm-12 mt-5">
+    <div class="row ">
           <table  datatable [dtOptions]="dtOptions" class="row-border table-bordered hover">
               <thead>
                   <tr>
@@ -28,7 +24,6 @@
           </table>
           <button class="btn btn-primary" (click)="openPopup(template)">Add </button>
       </div>            
-  </div>
 </div>
 
 
@@ -66,7 +61,6 @@
       </div>
   </form>
   <div class="modal-footer">
-      <button type="button" class="btn btn-secondary"  (click)="closePopup()">Close</button>
       <button type="button" class="btn btn-success" [disabled]="!addForm.valid" (click)="add()">Add</button>
   </div>
 </ng-template>
